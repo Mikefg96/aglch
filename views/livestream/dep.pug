@@ -1,0 +1,126 @@
+extends ../layout
+block content
+    #wrapper
+        if lote.genealogia.abuelo_pa == null
+        else
+            h1.text-center Genealogía
+            .table-responsive
+                table#gen.table.table-striped
+                    tbody
+                        tr
+                            td
+                            td.text-left Abuelo paterno: 
+                                span.normal-text #{lote.genealogia.abuelo_pa}
+                        tr
+                            td.text-right Padre: 
+                                span.normal-text #{lote.genealogia.padre}
+                            td
+                        tr
+                            td
+                            td.text-left Abuela paterna: 
+                                span.normal-text #{lote.genealogia.abuela_pa}
+                        tr
+                            td 
+                            td 
+                        tr
+                            td
+                            td.text-left Abuelo materno: 
+                                span.normal-text #{lote.genealogia.abuelo_ma}
+                        tr
+                            td.text-right Madre: 
+                                span.normal-text #{lote.genealogia.madre}
+                            td
+                        tr
+                            td
+                            td.text-left Abuela materna: 
+                                span.normal-text #{lote.genealogia.abuela_ma}
+        h1.text-center DEP
+        .table-responsive
+            table#dep.table.table-striped
+                thead
+                    tr
+                        th.text-center #
+                        th.text-center Peso Nac.
+                        th.text-center Peso Des.
+                        th.text-center Peso Actual
+                        th.text-center CE
+                tbody
+                each dep in lote.deps
+                    tr
+                        if dep.privado == null
+                            td.text-center -
+                        else
+                            td.text-center #{dep.privado}
+                        if dep.pesonac == null
+                            td.text-center -
+                        else
+                            td.text-center #{dep.pesonac}kg
+                        if dep.pesodes == null
+                            td.text-center -
+                        else
+                            td.text-center #{dep.pesodes}kg
+                        if dep.pesoactual == null
+                            td.text-center -
+                        else
+                            td.text-center #{dep.pesoactual}kg
+                        if dep.ce == null
+                            td.text-center -
+                        else
+                            td.text-center #{dep.ce}
+    style.
+        #wrapper {
+            height: 100vh;
+            width: 100%;
+        }
+        h1 {
+            margin: 0;
+            margin-bottom: 2%;
+            margin-top: 2%;
+            font-weight: 600;
+            color: #B90300;
+        }
+        table {
+            margin: 0 auto;
+        }
+        #dep {
+            width: 60%;
+            font-size: 1.5rem;
+        }
+        #gen > tbody > tr > td {
+            border-top: 0 !important;
+            padding: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #204D74;
+        }
+        #gen > tbody > tr:nth-child(4) {
+            padding-top: 5%;
+        }
+        .normal-text {
+            color: #66615b;
+        }
+
+        @media screen and (max-width: 992px) {
+            #gen > tbody > tr > td {
+                font-size: 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            #dep {
+                width: 60%;
+                font-size: 0.8rem;
+            }   
+        }
+        @media screen and (max-width: 600px) {
+            #gen > tbody > tr > td {
+                font-size: 0.8rem;
+            }
+            h1 {
+                font-size: 1.2rem;
+            }
+            #dep {
+                width: 60%;
+                font-size: 0.6rem;
+            }   
+        }

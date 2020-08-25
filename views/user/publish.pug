@@ -1,0 +1,90 @@
+extends ../layout
+block content
+    .main
+        .section
+            .container
+                h3 Add Product
+                form
+                    .row
+                        .col-md-5.col-sm-5
+                            h6 Product Image
+                            .fileinput.fileinput-new.text-center(data-provides='fileinput')
+                                .fileinput-new.thumbnail.img-no-padding(style='max-width: 370px; max-height: 250px;')
+                                    img(src='/img/image_placeholder.jpg', alt='...')
+                                .fileinput-preview.fileinput-exists.thumbnail.img-no-padding(style='max-width: 370px; max-height: 250px;')
+                                div
+                                    span.btn.btn-outline-default.btn-round.btn-file
+                                        span.fileinput-new Select image
+                                        span.fileinput-exists Change
+                                        input(type='file', name='...')
+                                    a.btn.btn-link.btn-danger.fileinput-exists(href='#paper-kit', data-dismiss='fileinput')
+                                        i.fa.fa-times
+                                        |  Remove
+                            h6 Tags
+                            #tags
+                                input.tagsinput(data-color='success', type='text', value='Minimal, Light, New, Friends', data-role='tagsinput')
+                                // <div class="tagsinput-add"></div>
+                                // You can change "tag-primary" with with "tag-info", "tag-success", "tag-warning","tag-danger"
+                            h6 Categories
+                            #tags-2
+                                input.tagsinput(data-color='success', type='text', value='Food, Drink', data-role='tagsinput')
+                                // <div class="tagsinput-add"></div>
+                                // You can change "tag-primary" with with "tag-info", "tag-success", "tag-warning","tag-danger"
+                            h6
+                                | Format
+                                span.icon-danger *
+                            .form-check-radio
+                                label.form-check-label
+                                    input#exampleRadios1.form-check-input(type='radio', name='exampleRadios', value='option1')
+                                    |  Digital
+                                    span.form-check-sign
+                            .form-check-radio
+                                label.form-check-label
+                                    input#exampleRadios2.form-check-input(type='radio', name='exampleRadios', value='option2', checked='')
+                                    |  Print
+                                    span.form-check-sign
+                        .col-md-7.col-sm-7
+                            .form-group
+                                h6
+                                    | Name
+                                    span.icon-danger *
+                                input.form-control.border-input(type='text', placeholder='enter the product name here...')
+                            .form-group
+                                h6
+                                    | Tagline
+                                    span.icon-danger *
+                                input.form-control.border-input(type='text', placeholder='enter the product tagline here...')
+                            .row.price-row
+                                .col-md-6
+                                    h6
+                                        | Price
+                                        span.icon-danger *
+                                    .input-group.border-input
+                                        input.form-control.border-input(type='text', value='', placeholder='enter price')
+                                        .input-group-append
+                                            span.input-group-text
+                                                i.fa.fa-euro
+                                .col-md-6
+                                    h6 Discount
+                                    .input-group.border-input
+                                        input.form-control.border-input(type='text', value='', placeholder='enter discount')
+                                        .input-group-append
+                                            span.input-group-text %
+                            .form-group
+                                h6 Description
+                                textarea.form-control.textarea-limited(placeholder='This is a textarea limited to 150 characters.', rows='13', maxlength='150')
+                                h5
+                                    small
+                                        span#textarea-limited-message.pull-right 150 characters left
+                            .form-check
+                                label.form-check-label
+                                    input.form-check-input(type='checkbox', value='')
+                                    |  Display on landing page
+                                    span.form-check-sign
+                    .row.buttons-row
+                        .col-md-4.col-sm-4
+                            button.btn.btn-outline-danger.btn-block.btn-round Cancel
+                        .col-md-4.col-sm-4
+                            button.btn.btn-outline-primary.btn-block.btn-round Save
+                        .col-md-4.col-sm-4
+                            button.btn.btn-primary.btn-block.btn-round Save & Publish 

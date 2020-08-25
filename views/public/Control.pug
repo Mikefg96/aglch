@@ -1,0 +1,28 @@
+extends ../layout
+block content
+    .wrapper(style='height:30vh; overflow:hidden;')
+        .page-header(style="background-color: #252422")
+    .wrapper
+        .section.section-gray
+            .container
+                .row
+                    .col-md-8.ml-auto.mr-auto.text-center(style='margin-bottom: 37px; margin-top: 20px;')
+                        h2.title Seleccione una opción: 
+                .row
+                    .col-md-10.ml-auto.mr-auto
+                        .row(style='margin-bottom: 60px; margin-top: 40px;')
+                            .col-md-4
+                                button-center
+                                    a(href="/event/aglch/agregar-peso")
+                                        button.btn.btn-warning.btn-block.btn-round(type='button') Agregar peso
+                            .col-md-4
+                                button-center
+                                    a(href="/event/aglch/editar-lote")
+                                        button.btn.btn-default.btn-block.btn-round(type='button') Editar un Lote
+                            .col-md-4
+                                button-center
+                                    a(href="/event/aglch/registrar-lote")
+                                        button.btn.btn-success.btn-block.btn-round(type='button') Crear un Lote
+                        
+                .row
+

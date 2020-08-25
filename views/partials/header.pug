@@ -1,0 +1,47 @@
+nav#navbar.navbar.navbar-expand-lg.nav-down.navbar-absolute.navbar-transparent
+    .container
+        .navbar-translate
+            a.navbar-brand(href='/login')
+                img(src="/img/logos/LogoAB.png", alt="logo", style='max-heigth: 190px; max-width: 190px;')
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navigation', aria-controls='navigation-index', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-bar.bar1
+                span.navbar-toggler-bar.bar2
+                span.navbar-toggler-bar.bar3
+        .collapse.navbar-collapse(data-nav-image='/img/blurred-image-1.jpg', data-color='orange')
+            ul.navbar-nav.ml-auto
+                if !user
+                    li.nav-item
+                        a.nav-link(href='/registrar/aglch') Registrar
+                    li.nav-item
+                        a.nav-link(href='/login') Login
+                else
+                    li.nav-item
+                        a.nav-link ¡Bienvenido, #{user.name}!
+                    li.nav-item
+                        a.nav-link(href='/logout') Logout
+                    //- li.dropdown.nav-item
+                    //-     a#navbarDropdownMenuLink1.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
+                    //-         | Publicaciones
+                    //-     .dropdown-menu.dropdown-menu-right.dropdown-danger(aria-labelledby='navbarDropdownMenuLink1')
+                    //-         a#navbar-one.dropdown-item(href='#')
+                    //-                 i.nc-icon.nc-zoom-split
+                    //-                 |  Explorar
+                    //-         a#navbar-two.dropdown-item(href='/user/publish/' + user._id)
+                    //-             i.nc-icon.nc-simple-add
+                    //-             |  Crear
+                    //-         a#navbar-three.dropdown-item(href='#')
+                    //-             i.nc-icon.nc-settings-gear-65
+                    //-             |  Administrar
+                    //- li.dropdown.nav-item
+                    //-         a#navbarDropdownMenuLink1.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
+                    //-             | Usuario
+                    //-         .dropdown-menu.dropdown-menu-right.dropdown-danger(aria-labelledby='navbarDropdownMenuLink1')
+                    //-             a#navbar-one.dropdown-item(href='/user/' + user._id)
+                    //-                     i.nc-icon.nc-badge
+                    //-                     |  Perfil
+                    //-             a#navbar-two.dropdown-item(href='/user/settings/' + user._id)
+                    //-                 i.nc-icon.nc-settings
+                    //-                 |  Configuración
+                    //-             a#navbar-three.dropdown-item(href='/logout')
+                    //-                 i.nc-icon.nc-button-power
+                    //-                 |  Logout

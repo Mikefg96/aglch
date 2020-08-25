@@ -1,0 +1,91 @@
+extends ../layout
+block content
+    .wrapper(style='height: 30vh; overflow: hidden; background-color: #252422;')
+        .page-header(style ='background-color: #252422;')
+    .wrapper
+        .section.section-gray
+            .container
+                .row
+                    .col-md-8.ml-auto.mr-auto.text-center
+                        h2.title Regístrate para la subasta 
+                        p(style='margin-bottom: 10px;')
+                            | ¡Llena el registro y disfruta la experiencia de la subasta desde la comodidad de tu casa, puja y compra en línea!
+                        if errors
+                            p(style='color: red; text-align: center; margin-top: -10px; margin-bottom: 10px;') #{errors}
+                .row
+                form.contact(method='POST', action='/registrar/elpolar')    
+                    .col-md-10.ml-auto.mr-auto
+                        .row(style='margin-bottom: 5px;')
+                            .col-md-6
+                                h7.title Nombre
+                            .col-md-6
+                                h7.title Apellido
+                        .row(style='margin-bottom: 10px;')
+                            .col-md-6
+                                input.form-control(type='text', name='name', placeholder='Nombre')
+                            .col-md-6
+                                input.form-control(type='text', name='surname', placeholder='Apellido')
+                        .row(style='margin-bottom: 5px;')
+                            .col-md-6
+                                h7.title RFC
+                            .col-md-6
+                                h7.title Teléfono
+                        .row(style='margin-bottom: 10px;')
+                            .col-md-6
+                                input.form-control(type='text',name='rfc' placeholder='RFC')
+                            .col-md-6
+                                input.form-control(type='number',name='phone' placeholder='Teléfono')
+                        .row(style='margin-bottom: 5px;')
+                            .col-md-12
+                                h7.title Dirección
+                                input.form-control(placeholder='Dirección', name='address')
+                        .row(style='margin-bottom: 5px;')
+                            .col-md-3
+                                h7.title Colonia
+                            .col-md-3
+                                h7.title Ciudad
+                            .col-md-3
+                                h7.title Estado
+                            .col-md-3
+                                h7.title Código Postal  
+                        .row(style='margin-bottom: 10px;')
+                            .col-md-3
+                                input.form-control(type='text', name='neighborhood', placeholder='Colonia')
+                            .col-md-3
+                                input.form-control(type='text', name='city', placeholder='Ciudad')
+                            .col-md-3
+                                input.form-control(type='text', name='state', placeholder='Estado')
+                            .col-md-3
+                                input.form-control(type='number', name='pc', placeholder='Código Postal')
+                        .row(style='margin-bottom: 5px;')
+                            .col-md-6
+                                h7.title Correo Electrónico
+                            .col-md-6
+                                h7.title Confirmación del Correo Electrónico
+                        .row(style='margin-bottom: 2px;')
+                            .col-md-6
+                                input.form-control(type='email',name='email' placeholder='Email')
+                            .col-md-6
+                                input.form-control(type='email', name='confirmedEmail' placeholder='Confirmación Email')
+                        .row(style='margin-bottom: 5px; justify-content: center;')
+                            .col-md-6
+                                h7.title No. IFE/INE
+                        .row(style='margin-bottom: 2px; justify-content: center;')
+                            .col-md-6
+                                input.form-control(type='number', name='ine' placeholder='No. IFE/INE')
+                        .row(style='margin-bottom: 15px; justify-content: center;')
+                            .col-md-6
+                                h9.description Segundo número de la primer linea de datos al reverso de la credencial
+                        .row
+                            .col-md-15.ml-auto.mr-auto(style='margin-bottom: 15px;')
+                                h7.description Al presionar el botón de Registro, usted confirma que la información provista es verídica y precisa. Esta información será verificada para obtener su número de registro para uso durante la subasta en línea. 
+                            .col-md-6.ml-auto.mr-auto
+                                button.btn.btn-primary.btn-block.btn-round(type=submit) Registrar
+                        h3.visit
+                //- form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_blank')
+                //-     input(type='hidden', name='cmd', value='_s-xclick')
+                //-     input(type='hidden', name='hosted_button_id', value='R2MANTJ63QRAE')
+                //-     input(type='image', src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_paynowCC_LG.gif', border='0', name='submit', alt='PayPal, la forma más segura y rápida de pagar en línea.')
+                //-     img(alt='', border='0', src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif', width='1', height='1')
+
+

@@ -1,0 +1,39 @@
+extends ../layout
+block content
+    .wrapper(style='height:20vh; overflow:hidden;')
+        .page-header(style="background-color: #252422")
+    .wrapper
+        .section.section-gray
+            .container
+                .row
+                    .col-md-8.ml-auto.mr-auto.text-center(style='margin-bottom: 10px;')
+                        h2.title Registro de lotes para subasta 
+                        h5.title
+                            | ¡Llena los campos para dar de alta un lote!
+                .row
+                    .col-md-10.ml-auto.mr-auto
+                        
+                            .row
+                                h6.title 
+                                    big Datos Generales
+                            .row(style='margin-bottom: 5px;')
+                                .col-md-4
+                                    h7.title No.Lote
+                                .col-md-4
+                                    h7.title Descripción
+                                .col-md-4
+                                    h7.title No. Cabezas
+                            .row
+                                .col-md-4
+                                    input.form-control(type='number', name='no_lote' placeholder='No. Lote')
+                                .col-md-4
+                                    input.form-control(type='text', name='descripcion' placeholder='Descripción')
+                                .col-md-4
+                                    input.form-control(type='number', name='no_cabezas' placeholder='No. Cabezas')
+                            
+                                .col-md-15.ml-auto.mr-auto(style='margin-bottom: 15px; margin-top: 15px;')
+                                    h7.description Al presionar el botón de Registro, usted confirma que la información provista es verídica y precisa.
+                                .col-md-6.ml-auto.mr-auto
+                                    button.btn.btn-primary.btn-block.btn-round(type=submit) Registrar Lote
+
+

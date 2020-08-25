@@ -1,0 +1,51 @@
+extends ../layout
+block styles
+    link(rel="stylesheet", href="/css/subasta/monitor.css")
+block content
+    #lote
+        p Lote: 
+            span#progen-lote.aqua-text #{controlador.loteActual.lote}
+    #wrapper
+        #left-wrapper
+            div
+                p Tipo: 
+                    span#progen-raza.aqua-text #{controlador.loteActual.raza}
+            div
+                p Cabezas: 
+                    span#progen-cabezas.aqua-text #{controlador.loteActual.cabezas}
+            div
+                p Peso prom.: 
+                    if controlador.loteActual.pesototal == null
+                        span#progen-pesoprom.aqua-text -
+                    else
+                        - var pesoPromedio = Math.round(controlador.loteActual.pesototal / controlador.loteActual.cabezas);
+                        span#progen-pesoprom.aqua-text #{pesoPromedio}kg
+            div
+                p Peso total: 
+                    if controlador.loteActual.pesototal == null
+                        span#progen-pesototal.aqua-text -
+                    else
+                        span#progen-pesototal.aqua-text #{controlador.loteActual.pesototal}kg
+        #right-wrapper
+            div
+                button.btn.btn-danger(type='button') ACTUAL
+                if controlador.actual == null
+                    p#progen-actual.aqua-text #{controlador.actual}
+                else
+                    p#progen-actual.aqua-text $#{controlador.actual}
+            div
+                button.btn.btn-default(type='button') OFERTANTE
+                p#progen-ofertante #{controlador.ofertante}
+            div
+                button.btn.btn-warning(type='button') SIGUIENTE
+                if controlador.ofertar == null
+                    p#ofertar-value #{controlador.ofertar}
+                else
+                    p#ofertar-value $#{controlador.ofertar}
+        //- img#agrarium(src='/img/logos/claro.png')
+        img#agrarium(src='/img/logos/oscuro.png')
+        //- img#progen(src='/img/logos/progen.png')
+        img#progen(src='/img/logos/LogoN.png')
+        p#aumento #{controlador.loteActual.aumento}
+block scripts
+    script(src="/js/socket.io.js")

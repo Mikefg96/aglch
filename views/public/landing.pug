@@ -1,0 +1,274 @@
+extends ../layout
+block content
+    .page-header(data-parallax='true', style="background-image: url('/img/landing/main.jpg');")
+        .filter
+        .content-center
+            .container
+                .motto
+                    h1.title Agrarium Technologies
+                    h3.description Tecnología para el campo
+                    br
+                    //- TODO: Crear función toExplanation para que se mueva a la siguiente sección.
+                    a(href="/about-us")
+                        button.btn.btn-outline-neutral.btn-round(type='button', onclick='toExplanation()') Enséñame más
+    .wrapper
+        .section.text-center.landing-section
+
+                .title
+                    h2(style='text-align:center;') ¡Manténte al tanto de nuestros eventos!
+
+                    .content-center
+                        .motto
+                            h3.description Da click en la imagen para más información
+                .row
+                    .col-md-9.ml-auto.mr-auto
+                        .card.card-raised.page-carousel
+                            #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+                                ol.carousel-indicators
+                                    li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+                                    //- li.active(data-target='#carouselExampleIndicators', data-slide-to='1')
+                                    li(data-target='#carouselExampleIndicators', data-slide-to='2')
+                                .carousel-inner(role='listbox')
+                                    .carousel-item.active
+                                        a.link(href='/contact-us')
+                                        img.d-block.img-fluid(src='/img/landing/ASubasta.png', alt='First slide')
+                                        .carousel-caption.d-none.d-md-block
+                                            p 
+                                    //- .carousel-item
+                                    //-     a.link(href='/event/progen')
+                                    //-     img.d-block.img-fluid(src='/img/landing/Progen.png', alt='Second slide')
+                                    //-     .carousel-caption.d-none.d-md-block
+                                    //-         p 
+                                    .carousel-item
+                                        a.link(href='https://elpolar.agrariumtech.com/')
+                                        img.d-block.img-fluid(src='/img/landing/ElPolar.png', alt='Third slide')
+                                        .carousel-caption.d-none.d-md-block
+                                            p 
+                                a.left.carousel-control.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+                                    span.fa.fa-angle-left
+                                    span.sr-only Previous
+                                a.right.carousel-control.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+                                    span.fa.fa-angle-right
+                                    span.sr-only Next
+                .title
+                    .col-md-4.offset-md-4
+                        button-center
+                            a(href="/event/elpolar")
+                                button.btn.btn-warning.btn-block.btn-round(type='button') ¡Ir a la 2da Gran Subasta El Polar!
+        
+
+        // Sección de newsletter
+        .subscribe-line.subscribe-line-transparent(style="background-image: url('/img/landing/settler.jpg')")
+            .container
+                .row
+                    .col-lg-9.col-md-8.col-sm-8
+                        //form
+                            .form-group
+                                input.form-control.news-placeholder(type='text', value='', placeholder='Introduce aquí tu correo...')
+                    .col-md-3.col-sm-4
+                        //button.btn.btn-info.btn-block.btn-round(type='button') ¡Subscríbete ahora!
+                        h5.info-title
+
+
+        //Anuncios
+        //#cards.section.section-gray
+            
+            //Anuncios
+        #cards.section.section-gray
+            
+            //.container.tim-container
+                .title
+                    h2(style='text-align:center;') ¡Explora algunos de nuestros anuncios!
+                h4.title 
+                .row
+                    .col-md-4.col-sm-6
+                        .card.card-blog
+                            .card-image
+                                a(href='#pablo')
+                                    img(src='/img/landing/Angus.jpg', style='width:350px;height:210px;')
+                            .card-body.text-center
+                                h6.card-category
+                                        |  Rancho La Villa
+                                h4.card-title
+                                    | VACA ANGUS
+                                h6.card-title
+                                    | $20,000  M.N.
+                                .card-description
+                                    | Hembra 500 kg
+                                .card-footer
+                                    a.btn.btn-warning.btn-round(href='#pablo') Ver Anuncio
+
+                        .card.card-blog
+                            .card-image
+                                a(href='#pablo')
+                                    img(src='/img/landing/semental.jpg', style='width:350px;height:210px;')
+                            .card-body.text-center
+                                h6.card-category
+                                        |  Rancho Los Macanas
+                                h4.card-title
+                                    | TORO SEMENTAL
+                                h6.card-title
+                                    | $20,000  M.N.
+                                .card-description
+                                    | Macho 721 KG
+                                .card-footer
+                                    a.btn.btn-warning.btn-round(href='#pablo') Ver anuncio
+
+                        .card.card-blog
+                            .card-image
+                                a(href='#pablo')
+                                    img(src='/img/landing/angusbecerro.jpg', style='width:350px;height:210px;')
+                            .card-body.text-center
+                                h6.card-category
+                                        |  Rancho de Satevo
+                                h4.card-title
+                                    | BECERROS ANGUS
+                                h6.card-title
+                                    | $20,000  M.N.
+                                .card-description
+                                    | Machos 200 KG
+                                .card-footer
+                                    a.btn.btn-warning.btn-round(href='#pablo') Ver Anuncio
+                                    
+                    .col-md-4.col-sm-6
+                        .card.card-blog
+                            .card-image
+                                a(href='#pablo')
+                                    img(src='/img/landing/simmental.jpg', style='width:350px;height:210px;')
+                            .card-body.text-center
+                                h6.card-category
+                                        |  Rancho El Jinete
+                                h4.card-title
+                                    | VACA SIMMENTAL
+                                h6.card-title
+                                    | $20,000  M.N.
+                                .card-description
+                                    | Hembra 435 KG
+                                .card-footer
+                                    a.btn.btn-warning.btn-round(href='#pablo') Ver anuncio
+
+                        .card.card-blog
+                            .card-image
+                                a(href='#pablo')
+                                    img(src='/img/landing/Limousin.jpg', style='width:350px;height:210px;')
+                            .card-body.text-center
+                                h6.card-category
+                                        |  Rancho Las Potrancas
+                                h4.card-title
+                                    | TORO LIMOUSIN
+                                h6.card-title
+                                    | $20,000  M.N.
+                                .card-description
+                                    | Macho 743 KG
+                                .card-footer
+                                    a.btn.btn-warning.btn-round(href='#pablo') Ver Anuncio
+
+                        .card.card-blog
+                            .card-image
+                                a(href='#pablo')
+                                    img(src='/img/landing/charolais.jpg', style='width:350px;height:210px;')
+                            .card-body.text-center
+                                h6.card-category
+                                        |  Rancho Los Potreros
+                                h4.card-title
+                                    | VACA CHAROLAIS
+                                h6.card-title
+                                    | $20,000  M.N.
+                                .card-description
+                                    | Hembra 640 KG
+                                .card-footer
+                                    a.btn.btn-warning.btn-round(href='#pablo') Ver anuncio
+                    
+                    .col-md-4.col-sm-6
+                        .card.card-blog
+                            .card-image
+                                a(href='#pablo')
+                                    img(src='/img/landing/brangus.jpg', style='width:350px;height:210px;')
+                            .card-body.text-center
+                                h6.card-category
+                                        |  Rancho Las Lecheras
+                                h4.card-title
+                                    | BECERROS BRANGUS
+                                h6.card-title
+                                    | $20,000  M.N.
+                                .card-description
+                                    | Macho 350 KG
+                                .card-footer
+                                    a.btn.btn-warning.btn-round(href='#pablo') Ver Anuncio
+                        .card.card-blog
+                                .card-image
+                                    a(href='#pablo')
+                                        img(src='/img/landing/hereford.jpg', style='width:350px;height:210px;')
+                                .card-body.text-center
+                                    h6.card-category
+                                            |  Rancho El Semental
+                                    h4.card-title
+                                        | VACAS HEREFORD
+                                    h6.card-title
+                                        | $20,000  M.N.
+                                    .card-description
+                                        | Hembras 540 KG
+                                    .card-footer
+                                        a.btn.btn-warning.btn-round(href='#pablo') Ver anuncio
+
+                        .card.card-blog
+                            .card-image
+                                a(href='#pablo')
+                                    img(src='/img/landing/Limousin2.jpg', style='width:350px;height:210px;')
+                            .card-body.text-center
+                                h6.card-category
+                                        |  Rancho El Vaquero
+                                h4.card-title
+                                    | TORO LIMOUSIN
+                                h6.card-title
+                                    | $20,000  M.N.
+                                .card-description
+                                    | Macho 622 KG
+                                .card-footer
+                                    a.btn.btn-warning.btn-round(href='#pablo') Ver Anuncio
+                    
+                .title
+                    .col-md-4.offset-md-4
+                         button.btn.btn-success.btn-block.btn-round(type='button') ¡Ver más anuncios!
+            .container
+                .row
+                    .col-md-8.ml-auto.mr-auto
+                        h2.title ¿Qué ofrece nuestra plataforma?
+                        //h5 Optimización del proceso de comercialización de ganado mediante una plataforma que conecta a compradores y vendedores, nacionales e internacionales, mediante subastas y mercadeo. Al utilizar tecnologías de la Industria 4.0, logramos proveer información precisa para la toma de decisiones, además de transacciones seguras mediante contratos inteligentes.
+                        h5 Optimización del proceso de comercialización de ganado mediante una plataforma que permite vivir la experiencia de la subasta de manera digital. 
+                        br
+                br
+                br
+                .row
+                    .col-md-4
+                        .info
+                            .icon.icon-danger
+                                i.nc-icon.nc-app(style='color: #F68E23;')
+                            .description
+                                h4.info-title AgTechPay
+                                p.description Las transacciones 100 % seguras son ahora posible mediante los contratos inteligentes.
+                    //.col-md-3
+                        .info
+                            .icon.icon-danger
+                                i.nc-icon.nc-vector(style='color: #2BA251;')
+                            .description
+                                h4.info-title Inteligencia Artificial
+                                p ¿Es momento de comprar o de vender? Tranquilo, nosotros te asesoramos.
+                    .col-md-4
+                        .info
+                            .icon.icon-danger
+                                i.nc-icon.nc-world-2(style='color: #397DC0;')
+                            .description
+                                h4.info-title Expansión
+                                //p Contacta a gente interesada no sólo de tu región, sino también de otros estados e incluso países.
+                                p Accede a subastas no sólo de tu región, sino también de otros estados e incluso países.
+                    .col-md-4
+                        .info
+                            .icon.icon-danger
+                                i.nc-icon.nc-delivery-fast(style='color: #9E7CB1;')
+                            .description
+                                h4.info-title Eficiencia
+                                p
+                                    //| Darte a conocer jamás había sido tan fácil; ¡empienza a comprar o vender de inmediato!
+                                    | Pujar en línea jamás había sido tan fácil; ¡empienza a comprar de inmediato!
+            

@@ -1,0 +1,19 @@
+extends ../layout
+block content
+    .wrapper(style='height:100vh; overflow:hidden;')
+        .page-header(style="background-image: url('/img/login.jpg');")
+            .filter
+            .container
+                .row(style='margin-top:-60px')
+                    .col-lg-4.col-md-6.col-sm-6.ml-auto.mr-auto
+                        .card.card-register
+                            h3.card-title.text-center Ingresa tu nueva contraseña
+                            .division
+                                .line.l
+                                .line.r
+                            if error
+                                p(style='color: red; text-align: center; margin-top: -10px; margin-bottom: 10px;') #{error}
+                            form.register-form(action='/recover-password/'+params.token , method='post')
+                                input.form-control(type='password', placeholder='Contraseña', name='password')
+                                input.form-control(type='password', placeholder='Confirmar contraseña', name='confirmedPassword')
+                                button.btn.btn-block.btn-round(type='submit', style='background-color: #397DC0; border-color: #397DC0;') Recuperar mi cuenta

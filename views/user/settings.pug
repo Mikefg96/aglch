@@ -1,0 +1,76 @@
+extends ../layout
+block content
+    .wrapper(style='height: 100vh;')
+        .page-header.page-header-xs.settings-background(style="min-height: 40vh !important; background-image: url('/img/profile/profile-cover.jpg');")
+            .filter
+        .profile-content.section
+            .container
+                .row
+                    .profile-picture
+                        .fileinput.fileinput-new(data-provides='fileinput')
+                            .fileinput-new.img-no-padding
+                                img(src='/img/profile/placeholder.jpg', alt='...')
+                            .fileinput-preview.fileinput-exists.img-no-padding
+                            div
+                                span#pp-btn.btn.btn-outline-default.btn-file.btn-round(style='border-color: #F68E23; color: #F68E23;')
+                                    span.fileinput-new Cambiar foto
+                                    span.fileinput-exists Change
+                                    input(type='file', name='...')
+                                br
+                                a.btn.btn-link.btn-danger.fileinput-exists(href='#paper-kit', data-dismiss='fileinput')
+                                    i.fa.fa-times
+                                    |  Remove
+                #accordion(role='tablist', aria-multiselectable='true')
+                    .card.no-transition
+                        #headingOne.card-header.card-collapse(role='tab')
+                            h5.mb-0.panel-title
+                                a#settingsOne.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='false', aria-controls='collapseOne')
+                                    | Información esencial
+                                    i.nc-icon.nc-minimal-down
+                        #collapseOne.collapse(role='tabpanel', aria-labelledby='headingOne')
+                            .card-body
+                                .row
+                                    .col-md-6.ml-auto.mr-auto
+                                        form.settings-form(action='/user/settings/' + user._id, method='post')
+                                            .row
+                                                .col-md-6.col-sm-6
+                                                    .form-group
+                                                        label Nombre(s)
+                                                        input.form-control.border-input(type='text', placeholder='Nombre(s)', name='name', value=user.esential.name)
+                                                .col-md-6.col-sm-6
+                                                    .form-group
+                                                        label Apellido(s)
+                                                        input.form-control.border-input(type='text', placeholder='Apellido(s)', name='surnames', value=user.esential.surnames)
+                                                .col-md-6.col-sm-6
+                                                    .form-group
+                                                        label Correo
+                                                        input.form-control.border-input(type='text', placeholder='Correo', name='email', value=user.credentials.email)
+                                                .col-md-6.col-sm-6
+                                                    .form-group
+                                                        label Título
+                                                        input.form-control.border-input(type='text', placeholder='Ej: Productor Bovino', name='title', value=user.esential.title)
+                                            .form-group
+                                                label Descripción
+                                                textarea.form-control.textarea-limited(placeholder='Limitado a 150 carácteres.', rows='3', name='description', maxlength=250, onkeyup='countChar(this)') #{user.esential.description}
+                                                h5
+                                                    small
+                                                        span#textarea-limited-message.pull-right
+                                            .text-center
+                                                button.btn.btn-wd.btn-info.btn-round(type='submit', style='background-color: #2BA251 !important; border-color: #2BA251 !important;') Guardar cambios
+                        #headingTwo.card-header.card-collapse(role='tab')
+                            h5.mb-0.panel-title
+                                a#settingsTwo.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
+                                    | Información para publicar
+                                    i.nc-icon.nc-minimal-down
+                        #collapseTwo.collapse(role='tabpanel', aria-labelledby='headingTwo')
+                            .card-body
+                                | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        #headingThree.card-header.card-collapse(role='tab')
+                            h5.mb-0.panel-title
+                                a#settingsThree.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseThree', aria-expanded='false', aria-controls='collapseThree')
+                                    | Información para comprar / vender
+                                    i.nc-icon.nc-minimal-down
+                        #collapseThree.collapse(role='tabpanel', aria-labelledby='headingThree')
+                            .card-body
+                                | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+

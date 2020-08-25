@@ -1,0 +1,53 @@
+extends ../layout
+block content
+    .wrapper(style='height:100vh; overflow:hidden;z-index:1055')
+        .page-header(style="background-image: url('/img/a4.jpg');")
+            .filter
+            .container
+                .row(style='margin-top:-60px')
+                    .col-lg-4.col-md-6.col-sm-6.ml-auto.mr-auto
+                        .card.card-register
+                            h3.card-title.text-center ¡Bienvenido!
+                            //.social
+                                a.btn.btn-just-icon.btn-facebook(href='/auth/facebook', style='margin-right: 5px;')
+                                    i.fa.fa-facebook
+                                a.btn.btn-just-icon.btn-google(href='/auth/google')
+                                    i.fa.fa-google
+                            .division
+                                .line.l
+                                //span o
+                                .line.r
+                            if error
+                                p(style='color: red; text-align: center; margin-top: -10px; margin-bottom: 10px;') #{error}
+                            form.register-form(action='/login/local', method='post')
+                                input.form-control(type='text', placeholder='Correo', name='email')
+                                input.form-control(type='password', placeholder='Contraseña', name='password')
+                                //button.btn.btn-block.btn-round(type='submit', style='background-color: #397DC0; border-color: #397DC0;') Iniciar sesión
+                                button.btn.btn-block.btn-round(type='button', data-toggle='modal', data-target='#noticeModal',style='background-color: #397DC0; border-color: #397DC0;')
+                                    | Iniciar Sesión
+                                #noticeModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+                                    .modal-dialog
+                                        .modal-content
+                                            .modal-header.no-border-header
+                                                h1(style='color:#000000')#myModalLabel.modal-title Aviso
+                                                button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                                            .modal-body
+                                                .instruction
+                                                    .row
+                                                        .col-md-12
+                                                            p
+                                                                h4(style='margin: 0px 0 0; margin-bottom:30px;') El video transmitido puede tener un retraso de algunso segundos, dependiendo de diferentes factores de su conexión. Los datos que están en tiempo real, es la información en Texto, como Lote y Precio.
+                                            .modal-footer
+                                                .col-md-12
+                                                    button.btn.btn-block.btn-round(type='submit', style='background-color: #397DC0; border-color: #397DC0; margin-bottom:30px;') ¡Entendido, ir a la subasta!
+                            .login
+                                p
+                                    a(href='/forgot', style='color: #0FA0C9;') ¿Olvidaste tu contraseña?
+                                //p
+                                    a(href='/cambio', style='color: #0FA0C9;') Cambiar mi contraseña
+                                
+                            .login(style='margin-top: -5px;')
+                                hr
+                                p    
+                                    h7.title(style='color: #A0A0A0; margin-top:')  ¿No estas registrado?
+                                    a.btn.btn-link.btn-info(href='/event/aglch' style='color:  #FFA533; margin-top: -10px;') ¡Entra a la subasta como invitado!

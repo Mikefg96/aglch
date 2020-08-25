@@ -1,0 +1,50 @@
+extends ../layout
+block content
+    .wrapper(style='height:30vh; overflow:hidden;')
+        .page-header(style="background-color: #252422")
+    .wrapper
+        .section.section-gray
+            .container
+                .row
+                    .col-md-8.ml-auto.mr-auto.text-center(style='margin-bottom: 10px;')
+                        h2.title Registro de lotes para subasta 
+                        h5.title
+                            | ¡Llena los campos para dar de alta un lote!
+                .row
+                    .col-md-10.ml-auto.mr-auto
+                        .row
+                            h6.title 
+                                big Datos Generales
+                        .row(style='margin-bottom: 5px;')
+                            .col-md-2
+                                h7.title Número de Lote
+                            .col-md-6
+                                h7.title Nombre de Lote
+                            .col-md-2
+                                h7.title No. de Cabezas
+                        
+                        form.contact(method='POST', action='/event/elpolar/registrar-lote')  
+                            .row(style='margin-bottom: 10px;')
+                                .col-md-2
+                                    input.form-control(type='number', name='lote', placeholder='No. lote')
+                                .col-md-6
+                                    input.form-control(type='text', name='id_lote', placeholder='Nombre del Lote')
+                                .col-md-2
+                                    input.form-control(type='number', name='cabezas', placeholder='no. Cabezas')
+        
+                            .row(style='margin-bottom: 5px;')
+                                .col-md-2
+                                    h7.title Tipo
+                                
+            
+                            .row(style='margin-bottom: 10px;')
+                                .col-md-2
+                                    input.form-control(type='text', name='raza', placeholder='Tipo')
+                            
+                            .row
+                                .col-md-15.ml-auto.mr-auto(style='margin-bottom: 15px;')
+                                    h7.description Al presionar el botón de Registro, usted confirma que la información provista es verídica y precisa.
+                                .col-md-6.ml-auto.mr-auto
+                                    button.btn.btn-primary.btn-block.btn-round(type=submit) Registrar Lote
+                        h3.visit
+

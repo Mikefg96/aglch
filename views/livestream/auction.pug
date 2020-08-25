@@ -1,0 +1,115 @@
+extends ../layout
+block styles 
+    link(rel="stylesheet", href="/css/subasta/auction.css")
+block content
+    #progen-wrapper
+        #progen-leftcontainer
+            #mainvideo-container
+                #mainvideo
+                    //- p.live EN VIVO
+                    //- i.fa.fa-circle.on-air.live
+                    //- img(src='/img/logos/oscuro.png')
+                    iframe(src='https://player.twitch.tv/?channel=agrariumtech', frameborder='0', allowfullscreen='true', scrolling='no')
+                    //- iframe( src='https://www.youtube.com/embed/-1xif50QMr4?rel=0;&autoplay=1&mute=1', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='0')
+            #subvideos-container
+                #subvideo-align
+                    p#id_lote #{controlador.loteActual.id_lote}
+                    .subvideo
+                        //- img#progen-1(src=controlador[0].loteActual.fotos[0] alt="cam1")
+                    .subvideo
+                        //- img#progen-2(src=controlador[0].loteActual.fotos[1], alt="cam2")
+                    .subvideo
+                        //- img#progen-3(src=controlador[0].loteActual.fotos[2], alt="cam3")
+                    .subvideo
+                        //- img#progen-4(src=controlador[0].loteActual.fotos[3], alt="cam4")
+                    .subvideo
+                        //- img#progen-5(src=controlador[0].loteActual.fotos[4], alt="cam5")
+                    .subvideo
+                        //- img#progen-6(src=controlador[0].loteActual.fotos[5], alt="cam6")
+            #sponsors-container
+                #sponsors
+                    h6(style='text-align:center') El precio oficial es el mostrado en pantalla
+                    a#bannerRef(href="", target='_blank')
+                        img#banner(src="", alt="banner")
+        #progen-rightcontainer
+            #info-container
+                div
+                    div
+                        p Lote: 
+                            span#progen-lote.red-text #{controlador.loteActual.lote}
+                            //- p #{controlador[0].loteActual.id_lote}
+                        if user
+                            p#userFolio #{user.auctionFolio}
+                    div
+                        p Cabezas: 
+                            span#progen-cabezas.red-text #{controlador.loteActual.cabezas}
+                    div
+                        p Peso total: 
+                            if controlador.loteActual.pesototal == null
+                                span#progen-pesototal.red-text -
+                            else
+                                span#progen-pesototal.red-text #{controlador.loteActual.pesototal}kg
+                    div
+                        p Peso prom.: 
+                            if controlador.loteActual.pesototal == null
+                                span#progen-pesoprom.red-text -
+                            else
+                                - var pesoPromedio = (Math.round((controlador.loteActual.pesototal / controlador.loteActual.cabezas)*100)/100);
+                                span#progen-pesoprom.red-text #{pesoPromedio}kg
+                    div
+                        p Tipo: 
+                            span#progen-raza.red-text #{controlador.loteActual.raza}
+                    //div
+                        a#dep(href="/event/elpolar/lote/" + controlador.loteActual._id, target='_blank')
+                            button.btn.btn-info(type='button') Ver DEPs
+            #action-container
+                #actual-container
+                    button.btn.btn-danger(type='button') ACTUAL
+                    if controlador.actual == null
+                        p#progen-actual #{controlador.actual}
+                    else
+                        p#progen-actual $#{controlador.actual}           
+                #ofertante-container
+                    button.btn.btn-default(type='button') OFERTANTE
+                    p#progen-ofertante #{controlador.ofertante}
+                #ofertar-container
+                    if user
+                        button#ofertar-btn.btn.btn-warning(type='button') OFERTAR
+                        if controlador.ofertar == null
+                            p#ofertar-value #{controlador.ofertar}
+                        else
+                            p#ofertar-value $#{controlador.ofertar}
+                    p#aumento #{controlador.loteActual.aumento}
+    if user 
+        if user.isAdmin === true
+            #progen-admin
+                select#lote-select(name="", onchange='getLoteId()')
+                    option(value="" selected disabled) Selecciona el lote
+                    each lote in lotes.sort()
+                        option(value=lote.id) #{lote.lote}
+                input#admin-price-input(type="number", name="")
+                button#admin-price-btn.btn.btn-warning(type='button') MANDAR PRECIO
+                input#admin-weight-input(type="number", name="")
+                button#admin-weight-btn.btn.btn-warning(type='button') MANDAR PESO
+                button#admin-oferta-local.btn.btn-info(type='button') OFERTA LOCAL
+                button#admin-fin.btn.btn-success(type='button') TERMINAR LOTE
+block scripts
+    script(src="/js/socket.io.js")
+    script.
+        var banner = document.getElementById('banner');
+        var bannerRef = document.getElementById('bannerRef');
+        var currentPosition = 0;
+        var bannerArray = ['/img/elpolar/AgTechDigital.png', '/img/elpolar/Infinitum.jpg',  '/img/elpolar/AgTechMarket.png',  '/img/elpolar/MNA.png'];
+        var urlArray = [ 'https://www.agrariumtech.com', 'https://www.infinitichihuahua.mx/', 'https://www.agrariumtech.com', 'http://www.mnademexico.com'  ];
+
+        banner.src = '/img/elpolar/MNA.png';
+        bannerRef.href = 'http://www.mnademexico.com';
+
+        function switchBanner() {
+            if(++currentPosition >= bannerArray.length)
+                currentPosition = 0;
+            
+            banner.src = bannerArray[currentPosition];
+            bannerRef.href = urlArray[currentPosition];
+        }
+        setInterval(switchBanner, 5000);

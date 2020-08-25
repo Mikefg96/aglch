@@ -1,0 +1,51 @@
+extends  ../layout
+block content
+    .wrapper(style='height:100vh; overflow:hidden;')
+        .page-header(style="background-image: url('/img/register.jpg');")
+            .filter
+            .container
+                .row(style='margin-top:-60px')
+                    .col-lg-6.col-md-6.col-sm-7.col-12.ml-auto
+                        .info.info-horizontal
+                            .icon
+                                i.fa.fa-lock
+                            .description
+                                h3 Valoramos tu información
+                                p
+                                    | Sabemos que es importante para ti, y queremos darte la certerza de que estará segura dentro de nuestros sevidores.
+                        .info.info-horizontal
+                            .icon
+                                i.fa.fa-tachometer
+                            .description
+                                h3 Rapidez en el servicio
+                                p
+                                    | Comprar, vender o participar en una subasta jamás había sido tan fácil y rápido.
+                        .info.info-horizontal
+                            .icon
+                                i.fa.fa-globe
+                            .description
+                                h3 Expande tus horizontes
+                                p ¡Compra o vende con gente de otras regiones, estados, e incluso países! Nosotros te ayudamos a crecer.
+                    .col-lg-6.col-md-6.col-sm-5.col-12.mr-auto
+                        .card.card-register
+                            h3.card-title.text-center Regístrate
+                            .social
+                                a.btn.btn-just-icon.btn-facebook(href='/auth/facebook', style='margin-right: 5px;')
+                                    i.fa.fa-facebook
+                                a.btn.btn-just-icon.btn-google(href='/auth/google')
+                                    i.fa.fa-google
+                            .division
+                                .line.l
+                                span o
+                                .line.r
+                            if errors
+                                p(style='color: red; text-align: center; margin-top: -10px; margin-bottom: 10px;') #{errors}
+                            form.register-form(action='/registrar', method='post')
+                                input.form-control(type='text', placeholder='Correo', name='email')
+                                input.form-control(type='password', placeholder='Contraseña', name='password')
+                                input.form-control(type='password', placeholder='Confirmar contraseña', name='confirmedPassword')
+                                button.btn.btn-block.btn-round(type='submit', style='background-color: #F68E23; border-color: #F68E23;') Registrar
+                            .login
+                                p
+                                    | ¿Ya tienes una cuenta?
+                                    a(href='/login', style='margin-left: 5px;') Inicia sesión

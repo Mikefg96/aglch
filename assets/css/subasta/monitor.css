@@ -1,0 +1,130 @@
+/* ------------------------------
+   |      PROGEN-MONITOR        |
+   ------------------------------ */
+#lote {
+    height: 20vh;
+    width: 100%;
+    text-align: center;
+}
+
+#lote > p {
+    /* color: #204D74; */
+    color: #225dbd;
+    font-size: 15ex;
+    font-weight: 600;
+}
+
+#wrapper {
+    height: 80vh;
+    width: 100%;
+}
+
+#wrapper > div {
+    display: inline-block;
+    position: absolute;
+    height: 80%;
+    width: 50%;
+    padding-left: 3%;
+}
+
+#left-wrapper > div  {
+    height: 25%;
+    width: 100%;
+}
+
+#left-wrapper > div > p {
+    font-size: 11ex;
+    font-weight: 600;
+    color: #1a4389;
+}
+
+#right-wrapper {
+    right: 0;
+    padding-left: 0 !important;
+}
+
+#right-wrapper > div {
+    height: 30%;
+    width: 100%;
+}
+
+#right-wrapper > div > * {
+    display: inline-block;
+}
+
+#right-wrapper > div > p {
+    font-size: 15ex;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 3%;
+}
+
+#right-wrapper > div > button {
+    height: 62%;
+    width: 40%;
+    font-size: 6ex;
+    margin-top: -75px;
+}
+
+#right-wrapper >div:nth-child(1) > button {
+    /* background-color: #B90300; */
+    /* border-color: #B90300; */
+    background-color: #fdc72d;
+    border-color: #fdc72d;
+    color: black;
+}
+
+#right-wrapper >div:nth-child(2) > button {
+    background-color: #2a9a42;
+    border-color: #2a9a42;
+    color: white;
+}
+
+#right-wrapper >div:nth-child(2) > p {
+    color: #1a4389;
+}
+
+#right-wrapper >div:nth-child(3) > button {
+    /* background-color: #204D74;
+    border-color: #204D74; */
+    background-color: #f18b04;
+    border-color: #f18b04;
+    color: black;
+}
+
+#right-wrapper > div:nth-child(1) {
+    margin-top: 8%;
+}
+
+#right-wrapper > div:nth-child(3) > p {
+    /* color: #204D74; */
+    color: #1a4389;
+}
+
+#agrarium {
+    position: absolute;
+    right: 1%;
+    top: 2%;
+    height: 120px;
+    width: 200px;
+}
+
+#progen {
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    max-height: 130px;
+    max-width: 180px;
+}
+
+/* ------------------------------
+   |     PROGEN-MONITORv2       |
+   ------------------------------ */
+/* En progen-monitor.pug, se cambió el red-text por el aqua-text. */
+#body {
+    background-color: white !important;
+}
+
+.aqua-text {
+    color: #a00800;
+}

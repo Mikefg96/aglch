@@ -1,0 +1,74 @@
+.contact-wrapper {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-wrapper > div {
+    display: inline-block;
+    height: 100vh;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+.map {
+    background-image: url('/img/landing/maps.jpg');
+}
+
+#navbar-one:hover {
+    background-color: #F68E23 !important;
+}
+
+#navbar-two:hover {
+    background-color: #2BA251 !important;
+}
+
+#navbar-three:hover {
+    background-color: #397DC0 !important;
+}
+
+#settingsOne:hover {
+    color: #2BA251 !important;
+}
+
+#settingsOne:focus {
+    color: #2BA251 !important;
+}
+
+#settingsTwo:hover {
+    color: #397DC0 !important;
+}
+
+#settingsTwo:focus {
+    color: #397DC0 !important;
+}
+
+#settingsThree:hover {
+    color: #9E7CB1!important;
+}
+
+#settingsThree:focus {
+    color: #9E7CB1!important;
+}
+
+#pp-btn:hover {
+    background-color: #F68E23 !important;
+    border-color: #F68E23 !important;
+    color: white !important;
+}
+
+#profile-tab::after {
+    right: 45% !important;
+}
+
+#profile-tab::before {
+    right: 45% !important;
+}
+
+a.link {
+    height: 100%;
+    width: 100%;
+    left: 0;
+}

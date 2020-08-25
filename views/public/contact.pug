@@ -1,0 +1,65 @@
+extends ../layout
+block content
+    .page-header(data-parallax='true', style="background-image: url('/img/about/fondo8.jpg');")
+        .filter
+        .content-center
+            #contact-us.section.section-contactus.cd-section
+                .contactus-1.section-image(style="background-image: url('/img/contact/fondo5.jpg');")
+                    .row
+                        .col-md-10.ml-auto.mr-auto
+                            .card.card-contact.no-transition
+                                h3.card-title.text-center Contáctanos
+                                .row
+                                    .col-md-5.ml-auto
+                                        .card-body
+                                            .info.info-horizontal
+                                                .icon.icon-info
+                                                    i.nc-icon.nc-mobile(aria-hidden='true')
+                                                .description
+                                                    h4.info-title ¡Llámanos! 
+                                                    p
+                                                        | 
+                                                        br
+                                                        |  614-222-09-66
+                                                        br
+                                                        | 
+                                                        br
+                                                        |  614-354-75-52
+                                            .info.info-horizontal
+                                                .icon.icon-danger
+                                                    i.nc-icon.nc-badge(aria-hidden='true')
+                                                .description
+                                                    h4.info-title Correo Electrónico
+                                                    p
+                                                        | Servicio al cliente
+                                                        br
+                                                        |  contacto@agrariumtech.com
+                                                        br
+                                                        |  
+                                    .col-md-5.mr-auto
+                                        form#contact-form(role='form', method='post', action='/contact-team')
+                                            .card-body
+                                                .row
+                                                    .col-md-6
+                                                        .form-group.label-floating
+                                                            label.control-label Nombre
+                                                            input.form-control(type='text', name='name', placeholder='First Name')
+                                                    .col-md-6
+                                                        .form-group.label-floating
+                                                            label.control-label Apellido
+                                                            input.form-control(type='text', name='last', placeholder='Last Name')
+                                                .form-group.label-floating
+                                                    label.control-label Correo Electrónico
+                                                    input.form-control(type='email', name='email', placeholder='Email')
+                                                .form-group.label-floating
+                                                    label.control-label Mensaje
+                                                    textarea#message.form-control(name='message', rows='4', placeholder='Message')
+                                                .row
+                                                    .col-md-6
+                                                        .form-check
+                                                            label.form-check-label
+                                                                input.form-check-input(type='checkbox', value='')
+                                                                |  No soy un robot!
+                                                                span.form-check-sign
+                                                    .col-md-6
+                                                        button.btn.btn-primary.pull-right(type='submit') Enviar Mensaje

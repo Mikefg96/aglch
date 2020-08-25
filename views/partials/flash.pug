@@ -1,0 +1,18 @@
+if success_msg && success_msg != ''
+    .alert.alert-warning.alert-with-icon(style='position: fixed; z-index: 100; width: 100%; background-color: #86d9ab !important; bottom: 0; margin-bottom: 0;')
+        .alert-wrapper
+            button.close(type='button', data-dismiss='alert', aria-label='Close')
+                i.nc-icon.nc-simple-remove
+            .message
+                i.nc-icon.nc-check-2(style='margin-right: 10px !important;')
+                |       #{success_msg}
+
+if error_msg && error_msg != ''
+    .alert.alert-warning.alert-with-icon(style='position: fixed; z-index: 100; width: 100%; background-color: #f7765f !important; bottom: 0; margin-bottom: 0;')
+        .alert-wrapper
+            button.close(type='button', data-dismiss='alert', aria-label='Close')
+                i.nc-icon.nc-simple-remove
+            .message
+                i.nc-icon.nc-alert-circle-i(style='margin-right: 10px !important;')
+                |       #{error_msg}
+

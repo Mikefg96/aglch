@@ -1,0 +1,69 @@
+extends ../layout
+block content
+    .page-header(data-parallax='true', style="background-image: url('/img/about/fondo8.jpg');")
+        .filter
+        .content-center
+            .container
+                .motto
+                    h1.title Agrarium Technologies
+                    h3.description Somos una empresa mexicana enfocada en impulsar la ganadería, optimizando los procesos de compra-venta de ganado mediante una plataforma digital que ayuda a conectar a productores con compradores en todo México.
+                    br
+                    //- TODO: Crear función toExplanation para que se mueva a la siguiente sección.
+                    //- button.btn.btn-outline-neutral.btn-round(type='button', onclick='toExplanation()') Enséñame más
+    .wrapper   
+                .space-top
+                .title
+                    h2(style='text-align:center;') Experiencia Clave
+                
+                .row
+                    .col-md-8.ml-auto.mr-auto
+                        h5 Nos especializamos en la innovación y el emprendiento. Contamos con un equipo de desarrolladores de la ULSA Chihuahua quienes han ganado premios nacionales de Tecnología.
+                        br
+                
+                .pricing-1.section
+                    .container
+                        .row
+                            .col-md-3
+                                .card.card-pricing(data-color='orange')
+                                    .card-body
+                                        .card-image
+                                            span.image-simple
+                                                 img(src='/img/about/market-w.png', style='max-heigth: 190px; max-width: 190px;')
+                                        h6.card-title ¡Compra, vende y subasta ganado en cualquier lugar por Internet!
+                                        p.card-description
+                                            | 
+                                        .card-footer
+                                            a.btn.btn-neutral.btn-round(href='#pablo') AgTech Market
+                            .col-md-3
+                                .card.card-pricing(data-color='yellow')
+                                    .card-body
+                                        .card-image
+                                            span.image-simple
+                                                img(src='/img/about/pay-w.png', style='max-heigth: 190px; max-width: 190px;')
+                                        h6.card-title ¡Brinda protección y seguridad a todas tus transacciones!
+                                        p.card-description
+                                            | 
+                                        .card-footer
+                                            a.btn.btn-neutral.btn-round(href='#pablo') AgTech PAY 
+                            .col-md-3
+                                .card.card-pricing(data-color='green')
+                                    .card-body
+                                        .card-image
+                                            span.image-simple
+                                                img(src='/img/about/digital-w.png', style='max-heigth: 190px; max-width: 190px;')
+                                        h6.card-title ¡Expande tu mercado llevando tu subasta física simúltaneamente en internet!
+                                        p.card-description
+                                            | 
+                                        .card-footer
+                                            a.btn.btn-neutral.btn-round(href='#pablo') AgTech DIGITAL
+                            .col-md-3
+                                .card.card-pricing(data-color='blue')
+                                    .card-body
+                                        .card-image
+                                            span.image-simple
+                                                img(src='/img/about/media-w.png', style='max-heigth: 190px; max-width: 190px;')
+                                        h6.card-title ¡Mantente informado y actualízate con las últimas noticias del mundo ganadero!
+                                        p.card-description
+                                            | 
+                                        .card-footer
+                                            a.btn.btn-neutral.btn-round(href='#pablo') AgTech MEDIA
